@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>互联网人生活圈 - 业务服务</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#36CFC9',
+                        dark: '#1D2129',
+                        light: '#F2F3F5',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .card-hover {
+                @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+            }
+            .btn-primary {
+                @apply bg-primary text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-primary/90 hover:shadow-md;
+            }
+            .text-balance {
+                text-wrap: balance;
+            }
+            /* 移动端触摸反馈优化 */
+            .touch-feedback {
+                @apply active:scale-95 transition-transform duration-150;
+            }
+            .highlight-text {
+                @apply text-primary font-medium;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-dark">
+    <!-- 导航栏 -->
+    <header class="sticky top-0 bg-white shadow-sm z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 md:py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <i class="fa fa-globe text-primary text-xl sm:text-2xl"></i>
+                <span class="text-base sm:text-xl font-bold text-primary">互联网人生活圈</span>
+            </a>
+            
+            <!-- 移动端菜单按钮 -->
+            <button id="menuBtn" class="md:hidden text-dark focus:outline-none touch-feedback">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+            
+            <!-- 桌面端导航 -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#services" class="text-gray-600 hover:text-primary transition-colors">服务项目</a>
+                <a href="#contact" class="text-gray-600 hover:text-primary transition-colors">联系我们</a>
+            </nav>
+        </div>
+        
+        <!-- 移动端菜单 -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t shadow-md">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#services" class="text-gray-600 hover:text-primary py-3 transition-colors text-lg">服务项目</a>
+                <a href="#contact" class="text-gray-600 hover:text-primary py-3 transition-colors text-lg">联系我们</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section class="bg-gradient-to-r from-primary/90 to-primary py-16 md:py-20 lg:py-32">
+        <div class="container mx-auto px-4 sm:px-6 text-center">
+            <h1 class="text-[clamp(1.75rem,6vw,3.5rem)] font-bold text-white mb-6 leading-tight">
+                专业服务，助力您的事业发展
+            </h1>
+            <p class="text-[clamp(1rem,3vw,1.25rem)] text-white/90 max-w-2xl mx-auto mb-8 sm:mb-10 text-balance px-2">
+                提供广告合作、手机卡代理、海外公司注册、金融牌照办理及多元化咨询服务
+            </p>
+            <a href="#services" class="btn-primary inline-flex items-center touch-feedback text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4">
+                了解服务 <i class="fa fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- 服务项目 -->
+    <section id="services" class="py-16 md:py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-[clamp(1.5rem,5vw,2.5rem)] font-bold text-dark mb-4">我们的服务</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-balance px-2">
+                    专注于为互联网从业者和企业提供全方位的专业服务，满足您的多样化需求
+                </p>
+            </div>
+            
+            <!-- 移动端优化：卡片间距和内边距调整 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- 服务卡片 1 -->
+                <div class="bg-light rounded-xl p-5 sm:p-6 shadow-sm card-hover">
+                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-5 sm:mb-6">
+                        <i class="fa fa-bullhorn text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">广告合作</h3>
+                    <p class="text-gray-600 mb-4">覆盖高校及互联网圈35万粉丝，提供精准有效的广告投放服务。</p>
+                    <a href="https://mp.weixin.qq.com/s/1kTKlqZJbE7GoRGHgmMvMQ" target="_blank" class="inline-flex items-center text-primary font-medium hover:underline touch-feedback">
+                        了解详情 <i class="fa fa-external-link ml-1"></i>
+                    </a>
+                </div>
+                
+                <!-- 服务卡片 2：优化后的手机卡代理 -->
+                <div class="bg-light rounded-xl p-5 sm:p-6 shadow-sm card-hover">
+                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-5 sm:mb-6">
+                        <i class="fa fa-mobile text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">手机卡代理</h3>
+                    <p class="text-gray-600 mb-2">移动、联通、电信各类手机卡，大流量套餐任您选择。</p>
+                    <ul class="text-gray-600 mb-4 space-y-1 text-sm">
+                        <li class="flex items-start">
+                            <i class="fa fa-check text-primary mt-1 mr-2"></i>
+                            <span>无需前往营业厅，全程线上办理</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check text-primary mt-1 mr-2"></i>
+                            <span>快递直接邮寄，省时又省力</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa fa-check text-primary mt-1 mr-2"></i>
+                            <span>价格实惠，比营业厅更便宜</span>
+                        </li>
+                    </ul>
+                    <a href="https://haoka.uhao2024.com/s/sa1cZYhd" target="_blank" class="inline-flex items-center text-primary font-medium hover:underline touch-feedback">
+                        立即办理 <i class="fa fa-external-link ml-1"></i>
+                    </a>
+                </div>
+                
+                <!-- 新增服务卡片：海外公司注册 -->
+                <div class="bg-light rounded-xl p-5 sm:p-6 shadow-sm card-hover">
+                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-5 sm:mb-6">
+                        <i class="fa fa-building text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">海外公司注册</h3>
+                    <p class="text-gray-600 mb-4">专业办理全球各地公司注册，提供一站式海外公司设立解决方案。</p>
+                    <a href="https://mp.weixin.qq.com/s/1kTKlqZJbE7GoRGHgmMvMQ" target="_blank" class="inline-flex items-center text-primary font-medium hover:underline touch-feedback">
+                        了解详情 <i class="fa fa-external-link ml-1"></i>
+                    </a>
+                </div>
+                
+                <!-- 新增服务卡片：美国MSB等金融牌照办理 -->
+                <div class="bg-light rounded-xl p-5 sm:p-6 shadow-sm card-hover">
+                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-5 sm:mb-6">
+                        <i class="fa fa-id-card-o text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">金融牌照办理</h3>
+                    <p class="text-gray-600 mb-4">专业办理美国MSB等各类金融牌照，合规开展全球金融业务。</p>
+                    <a href="https://mp.weixin.qq.com/s/1kTKlqZJbE7GoRGHgmMvMQ" target="_blank" class="inline-flex items-center text-primary font-medium hover:underline touch-feedback">
+                        了解详情 <i class="fa fa-external-link ml-1"></i>
+                    </a>
+                </div>
+                
+                <!-- 服务卡片 3：跨境电商服务 -->
+                <div class="bg-light rounded-xl p-5 sm:p-6 shadow-sm card-hover">
+                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-5 sm:mb-6">
+                        <i class="fa fa-globe text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">跨境电商服务</h3>
+                    <p class="text-gray-600 mb-4">提供VAT/GST税号办理、EPR环保注册、商标注册、物流渠道代理等服务。</p>
+                    <a href="https://zhaoyawei100.github.io/kjds/" target="_blank" class="inline-flex items-center text-primary font-medium hover:underline touch-feedback">
+                        了解详情 <i class="fa fa-external-link ml-1"></i>
+                    </a>
+                </div>
+                
+                <!-- 服务卡片 4 -->
+                <div class="bg-light rounded-xl p-5 sm:p-6 shadow-sm card-hover">
+                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-5 sm:mb-6">
+                        <i class="fa fa-link text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Web3区块链服务</h3>
+                    <p class="text-gray-600 mb-4">提供海外公司注册、金融牌照代办、交易所搭建等区块链行业解决方案。</p>
+                    <a href="https://zhaoyawei100.github.io/blockchain/" target="_blank" class="inline-flex items-center text-primary font-medium hover:underline touch-feedback">
+                        了解详情 <i class="fa fa-external-link ml-1"></i>
+                    </a>
+                </div>
+                
+                <!-- 心理咨询卡片 1 - 塔罗牌 -->
+                <div class="bg-light rounded-xl p-5 sm:p-6 shadow-sm card-hover">
+                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-5 sm:mb-6">
+                        <i class="fa fa-star text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">塔罗牌咨询</h3>
+                    <p class="text-gray-600 mb-4">专业塔罗牌解读，为您的生活、事业、情感等方面提供指引与洞察。</p>
+                    <a href="https://zhaoyawei100.github.io/taluo/" target="_blank" class="inline-flex items-center text-primary font-medium hover:underline touch-feedback">
+                        了解详情 <i class="fa fa-external-link ml-1"></i>
+                    </a>
+                </div>
+                
+                <!-- 心理咨询卡片 2 - 雷诺曼 -->
+                <div class="bg-light rounded-xl p-5 sm:p-6 shadow-sm card-hover">
+                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-5 sm:mb-6">
+                        <i class="fa fa-diamond text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">雷诺曼咨询</h3>
+                    <p class="text-gray-600 mb-4">通过雷诺曼卡牌提供精准具体的答案，解答您的困惑与疑问。</p>
+                    <a href="https://zhaoyawei100.github.io/leinuoman/" target="_blank" class="inline-flex items-center text-primary font-medium hover:underline touch-feedback">
+                        了解详情 <i class="fa fa-external-link ml-1"></i>
+                    </a>
+                </div>
+                
+                <!-- 心理咨询卡片 3 - 周易 -->
+                <div class="bg-light rounded-xl p-5 sm:p-6 shadow-sm card-hover">
+                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-5 sm:mb-6">
+                        <i class="fa fa-book text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">周易咨询</h3>
+                    <p class="text-gray-600 mb-4">包括六爻预测、梅花易数等传统周易占卜术，为您指点迷津。</p>
+                    <a href="https://mp.weixin.qq.com/s/LFxuwEYKlqFrDsCeOlRnbw" target="_blank" class="inline-flex items-center text-primary font-medium hover:underline touch-feedback">
+                        了解详情 <i class="fa fa-external-link ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section id="contact" class="py-16 md:py-20 bg-light">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-[clamp(1.5rem,5vw,2.5rem)] font-bold text-dark mb-4">联系我们</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-balance px-2">
+                    有任何需求或疑问，欢迎通过以下方式与我们联系，我们将尽快回复您
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-sm overflow-hidden">
+                <!-- 移动端优化：单列布局，增加内边距 -->
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="p-6 sm:p-8 md:p-10 bg-primary text-white">
+                        <h3 class="text-xl font-bold mb-6">联系方式</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="fa fa-envelope-o"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1">邮箱</h4>
+                                    <a href="mailto:452231850@qq.com" class="text-white/80 hover:text-white transition-colors text-base">452231850@qq.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="fa fa-paper-plane-o"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1">Telegram</h4>
+                                    <a href="https://t.me/willton100" target="_blank" class="text-white/80 hover:text-white transition-colors text-base">@willton100</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="fa fa-weixin"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-1">微信</h4>
+                                    <p class="text-white/80 text-base">452231850</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6 sm:p-8 md:p-10 flex items-center justify-center">
+                        <div class="text-center">
+                            <p class="text-gray-600 mb-6 text-base">微信扫码添加好友</p>
+                            <!-- 移动端优化：二维码大小调整 -->
+                            <div class="w-48 h-48 sm:w-56 sm:h-56 bg-gray-200 rounded-lg flex items-center justify-center border-4 border-white shadow-sm">
+                                <img src="https://gitee.com/willton/leinuoman/raw/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20250916213101_149_401.png" alt="微信二维码，扫码添加好友" class="w-full h-full object-cover rounded">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-8 md:py-10">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-2 mb-4">
+                    <i class="fa fa-globe text-primary text-xl"></i>
+                    <span class="text-lg font-bold">互联网人生活圈</span>
+                </div>
+                <p class="text-gray-400 text-sm mb-6 px-2 text-balance">专业服务，助力您的事业发展</p>
+                <div class="flex justify-center space-x-6 mb-6">
+                    <a href="#" class="text-gray-400 hover:text-primary transition-colors touch-feedback">
+                        <i class="fa fa-weibo text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-primary transition-colors touch-feedback">
+                        <i class="fa fa-weixin text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-primary transition-colors touch-feedback">
+                        <i class="fa fa-telegram text-xl"></i>
+                    </a>
+                </div>
+                <p class="text-gray-500 text-xs">© 2023 互联网人生活圈. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 回到顶部按钮 - 移动端优化大小和位置 -->
+    <button id="backToTop" class="fixed bottom-6 right-6 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 touch-feedback">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // 移动端菜单切换
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = menuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // 关闭移动菜单（如果打开）
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    const icon = menuBtn.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // 回到顶部按钮
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            // 移动端更早显示回到顶部按钮
+            const scrollThreshold = window.innerWidth < 768 ? 200 : 300;
+            
+            if (window.pageYOffset > scrollThreshold) {
+                backToTopBtn.classList.remove('opacity-0', 'invisible');
+                backToTopBtn.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopBtn.classList.remove('opacity-100', 'visible');
+                backToTopBtn.classList.add('opacity-0', 'invisible');
+            }
+            
+            // 导航栏滚动效果
+            const header = document.querySelector('header');
+            if (window.pageYOffset > 50) {
+                header.classList.add('py-2');
+                header.classList.remove('py-3', 'py-4');
+            } else {
+                header.classList.add(window.innerWidth < 768 ? 'py-3' : 'py-4');
+                header.classList.remove('py-2');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // 服务卡片动画 - 移动端优化触发点
+        const animateOnScroll = () => {
+            const cards = document.querySelectorAll('.card-hover');
+            const triggerBottom = window.innerHeight * (window.innerWidth < 768 ? 0.7 : 0.8);
+            
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                
+                if (cardTop < triggerBottom) {
+                    card.classList.add('opacity-100');
+                    card.classList.remove('opacity-0', 'translate-y-4');
+                }
+            });
+        };
+        
+        // 初始设置
+        document.querySelectorAll('.card-hover').forEach(card => {
+            card.classList.add('opacity-0', 'translate-y-4', 'transition-all', 'duration-700');
+        });
+        
+        // 页面加载和滚动时触发动画
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+        
+        // 移动端触摸目标优化 - 确保按钮足够大
+        document.querySelectorAll('a, button').forEach(el => {
+            if (window.innerWidth < 768) {
+                const rect = el.getBoundingClientRect();
+                if (rect.width < 44 || rect.height < 44) {
+                    el.style.minWidth = '44px';
+                    el.style.minHeight = '44px';
+                    el.style.display = 'inline-flex';
+                    el.style.alignItems = 'center';
+                    el.style.justifyContent = 'center';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+    
