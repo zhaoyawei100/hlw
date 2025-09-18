@@ -34,6 +34,9 @@
             .btn-primary {
                 @apply bg-primary text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-primary/90 hover:shadow-md;
             }
+            .btn-hero {
+                @apply bg-white text-primary px-8 py-4 rounded-lg font-bold text-lg sm:text-xl transition-all duration-300 hover:bg-opacity-90 shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:translate-y-0;
+            }
             .text-balance {
                 text-wrap: balance;
             }
@@ -77,8 +80,8 @@
         </div>
     </header>
 
-    <!-- 英雄区域 -->
-    <section class="bg-gradient-to-r from-primary/90 to-primary py-16 md:py-20 lg:py-32">
+    <!-- 英雄区域 - 降低高度 -->
+    <section class="bg-gradient-to-r from-primary/90 to-primary py-12 md:py-16 lg:py-24">
         <div class="container mx-auto px-4 sm:px-6 text-center">
             <h1 class="text-[clamp(1.75rem,6vw,3.5rem)] font-bold text-white mb-6 leading-tight">
                 专业服务，助力您的事业发展
@@ -86,7 +89,7 @@
             <p class="text-[clamp(1rem,3vw,1.25rem)] text-white/90 max-w-2xl mx-auto mb-8 sm:mb-10 text-balance px-2">
                 提供广告合作、手机卡代理、海外公司注册、金融牌照办理及多元化咨询服务
             </p>
-            <a href="#services" class="btn-primary inline-flex items-center touch-feedback text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4">
+            <a href="#services" class="btn-hero inline-flex items-center touch-feedback">
                 了解服务 <i class="fa fa-arrow-right ml-2"></i>
             </a>
         </div>
